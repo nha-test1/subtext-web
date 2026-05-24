@@ -10,8 +10,8 @@ Public website for [Subtext](https://chrome.google.com/webstore) — a Chrome ex
 ## Live Site
 
 This repo is deployed via GitHub Pages:
-- **Homepage:** `https://<username>.github.io/subtext-web/`
-- **Privacy Policy:** `https://<username>.github.io/subtext-web/privacy.html`
+- **Homepage:** `https://nha-test1.github.io/subtext-web/`
+- **Privacy Policy:** `https://nha-test1.github.io/subtext-web/privacy.html`
 
 ## Local Development
 
