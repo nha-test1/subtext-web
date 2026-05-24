@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Subtext</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            color: #1d2a33;
+            background: linear-gradient(180deg, #fbf8f1 0%, #f7f4ec 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #0f766e;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #0f766e;
+            text-decoration: none;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .content {
+            background: rgba(255, 252, 245, 0.96);
+            border: 1px solid rgba(29, 42, 51, 0.12);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            color: #0f766e;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            color: #1d2a33;
+        }
+
+        p {
+            margin-bottom: 16px;
+        }
+
+        ul {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #5c6a73;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #0f766e;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+        
+        <div class="content">
+            <header>
+                <h1>Subtext Privacy Policy</h1>
+                <p style="color: #5c6a73; font-size: 0.95rem;">Last updated: May 23, 2026</p>
+            </header>
+
+            <p>This document describes how Subtext handles data as a browser extension.</p>
+
+            <p>Subtext is designed as a user-invoked tool. It stays dormant while the side panel is closed. It begins interacting with the current page only after you open the Subtext panel or explicitly start an analysis.</p>
+
+            <h2>What Subtext Accesses</h2>
+
+            <p>When you open the side panel, Subtext performs lightweight article detection on the active page so it can decide whether the page looks like a standalone article.</p>
+
+            <p>That preview step may read:</p>
+            <ul>
+                <li>the page URL</li>
+                <li>the page title</li>
+                <li>the detected source or site name</li>
+                <li>a short extracted excerpt</li>
+                <li>article-detection signals such as whether the page appears article-like</li>
+            </ul>
+
+            <p>When you click Analyze, Subtext may additionally extract:</p>
+            <ul>
+                <li>the full article body text</li>
+                <li>highlighted phrases and excerpt snippets used in the results UI</li>
+                <li>AI-generated summary points</li>
+                <li>AI-generated language indicators</li>
+                <li>AI-generated source-profile fields</li>
+            </ul>
+
+            <h2>What Is Sent Off Your Device</h2>
+
+            <p>When you click Analyze, the extension sends article data to the Subtext analysis service to generate results. Your browser does not contact third-party AI providers directly.</p>
+
+            <p>Data sent to the Subtext backend can include:</p>
+            <ul>
+                <li>the article title</li>
+                <li>the article URL</li>
+                <li>the detected source name</li>
+                <li>extracted article body text</li>
+                <li>an anonymous device identifier (see Local Storage section below)</li>
+            </ul>
+
+            <p>The Subtext backend receives this data, processes your request, and returns the result. The backend does not persistently store the article content it receives. The anonymous device identifier is used solely to enforce the free-tier daily usage limit and is not linked to any personal information.</p>
+
+            <h2>What Subtext Stores Locally</h2>
+
+            <p>Subtext stores some data in Chrome extension storage on your device.</p>
+
+            <h3>Stored In Local Storage</h3>
+
+            <p>Subtext stores a randomly generated anonymous device identifier in extension local storage. This identifier is created on first use, is not linked to any personal information or account, and is used solely to enforce the free-tier daily usage limit. It persists across browser sessions and can be cleared by uninstalling the extension.</p>
+
+            <h3>Stored In Session Storage</h3>
+
+            <p>Subtext stores analysis cache data in extension session storage so results can be restored during the current browser session.</p>
+
+            <p>Cached session data may include:</p>
+            <ul>
+                <li>normalized article URL</li>
+                <li>article title</li>
+                <li>source name</li>
+                <li>article excerpt</li>
+                <li>AI-generated summary points</li>
+                <li>AI-generated language indicators</li>
+                <li>AI-generated source-profile output</li>
+                <li>highlighted excerpt HTML used to render the side panel</li>
+                <li>cache fingerprints and timestamps</li>
+            </ul>
+
+            <p>These cache entries are temporary, expire automatically, and can also be cleared manually from Settings.</p>
+
+            <h2>Context Page Data</h2>
+
+            <p>If you open the Subtext context page, the extension passes a small amount of article metadata into that internal extension page so it can build research links.</p>
+
+            <p>That may include:</p>
+            <ul>
+                <li>article title</li>
+                <li>article URL</li>
+                <li>source name</li>
+            </ul>
+
+            <p>This data is used locally inside the extension to populate the context page and generate links such as search queries and source-research shortcuts.</p>
+
+            <p>If you choose to click one of those external research links, your browser will then send the relevant query or destination URL to that third-party site as part of the normal navigation request.</p>
+
+            <h2>Logging And Diagnostics</h2>
+
+            <p>Subtext writes diagnostic logs to the extension console to help with debugging while the extension is running.</p>
+
+            <p>Those logs may include limited metadata such as:</p>
+            <ul>
+                <li>the current page hostname</li>
+                <li>tab identifiers</li>
+                <li>article title or source values used during analysis flow</li>
+                <li>whether article title or source data was detected</li>
+                <li>article text length</li>
+                <li>error messages returned by Chrome APIs</li>
+            </ul>
+
+            <p>These logs are not sent to a Subtext server.</p>
+
+            <h2>What Subtext Does Not Currently Do</h2>
+
+            <p>In the current architecture, Subtext does not:</p>
+            <ul>
+                <li>persistently store article content on the Subtext backend</li>
+                <li>continuously analyze pages while the panel is closed</li>
+                <li>store analysis cache permanently across browser sessions</li>
+                <li>sell browsing data</li>
+            </ul>
+
+            <h2>User Controls</h2>
+
+            <p>You can:</p>
+            <ul>
+                <li>clear cached analysis data from Settings</li>
+                <li>disable or uninstall the extension at any time</li>
+            </ul>
+
+            <h2>Important Product Limitation</h2>
+
+            <p>Subtext provides AI-generated assistance and heuristics. It should not be treated as an authoritative source of truth about article intent, outlet credibility, or political bias.</p>
+
+            <h2>Third-Party Services</h2>
+
+            <p>Analysis requests are processed by the Subtext analysis service. The handling of data by third-party AI providers used by Subtext is governed by their own terms and policies.</p>
+
+            <p>Subtext provides analysis as a service. You do not need accounts with third-party AI providers.</p>
+
+            <h2>Contact</h2>
+
+            <p>For questions or concerns about this privacy policy, contact us at <strong>support@subtextapp.com</strong></p>
+        </div>
+    </div>
+
+    <footer>
+        <p><a href="index.html">Home</a> &nbsp;|&nbsp; &copy; 2026 Subtext</p>
+    </footer>
+</body>
+</html>
